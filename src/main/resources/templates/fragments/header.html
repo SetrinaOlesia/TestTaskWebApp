@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="https://www.thymeleaf.org/" xmlns:sec="https://www.thymeleaf.org/">
+<head>
+    <meta charset="UTF-8">
+    <meta content="width=device-width, initial-scale=1, shrink-to-fit=no" name="viewport">
+    <!-- Bootstrap CSS -->
+    <link crossorigin="anonymous" href="https://stackpath.bootstrapcdn.com/bootstrap/4.2.1/css/bootstrap.min.css"
+          integrity="sha384-GJzZqFGwb1QTTN6wy59ffF1BuGJpLSa9DkKMp0DgiMDm4iYMj70gZWKYbI706tWS" rel="stylesheet">
+    <!-- Подключаем jQuery -->
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+    <script crossorigin="anonymous"
+            integrity="sha384-Q6E9RHvbIyZFJoft+2mJbHaEWldlvI9IOYy5n3zV9zzTtmI3UksdQRVvoxMfooAo"
+            src="https://cdn.jsdelivr.net/npm/popper.js@1.16.0/dist/umd/popper.min.js"></script>
+
+    <!-- Подключаем Bootstrap JS -->
+    <script crossorigin="anonymous"
+            integrity="sha384-OgVRvuATP1z7JjHLkuOU7Xw704+h835Lr+6QL9UvYjZE3Ipu6Tp75j7Bh/kR0JKI"
+            src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.0/js/bootstrap.min.js"></script>
+</head>
+<body>
+<div class="navbar navbar-expand-sm bg-success navbar-dark" th:fragment="header">
+    <ul class="navbar-nav">
+        <li class="nav-item active">
+            <a class="nav-link" href="/home" style="border-right: 1px solid #e5e5e5;;">Home page</a>
+        </li>
+        <li class="nav-item active">
+            <a class="nav-link" href="/currencies" style="border-right: 1px solid #e5e5e5;;">Currencies</a>
+        </li>
+    </ul>
+    <div sec:authorize="isAuthenticated()">
+        <div style="position: absolute; top: 8px; right: 100px;font-size: 14px;">
+            You are logged as: <p style="color: black" sec:authentication="name"/>
+        </div>
+        <form th:action="@{/perform-logout}" method="post">
+            <button style="position: absolute; right: 0px; top: 10px;" class='btn btn-success pull-right' type="submit">
+                Log Out
+            </button>
+        </form>
+    </div>
+</div>
+</body>
+</html>

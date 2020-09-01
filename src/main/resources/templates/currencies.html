@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
+<head>
+    <!-- Required meta tags -->
+    <meta charset="utf-8">
+    <meta content="width=device-width, initial-scale=1, shrink-to-fit=no" name="viewport">
+    <link crossorigin="anonymous" href="https://stackpath.bootstrapcdn.com/bootstrap/4.2.1/css/bootstrap.min.css"
+          integrity="sha384-GJzZqFGwb1QTTN6wy59ffF1BuGJpLSa9DkKMp0DgiMDm4iYMj70gZWKYbI706tWS" rel="stylesheet">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+    <script crossorigin="anonymous"
+            integrity="sha384-Q6E9RHvbIyZFJoft+2mJbHaEWldlvI9IOYy5n3zV9zzTtmI3UksdQRVvoxMfooAo"
+            src="https://cdn.jsdelivr.net/npm/popper.js@1.16.0/dist/umd/popper.min.js"></script>
+    <script crossorigin="anonymous"
+            integrity="sha384-OgVRvuATP1z7JjHLkuOU7Xw704+h835Lr+6QL9UvYjZE3Ipu6Tp75j7Bh/kR0JKI"
+            src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.0/js/bootstrap.min.js"></script>
+</head>
+<body>
+    <div th:replace="fragments/header.html :: header"/>
+<h3>Currencies list page</h3>
+<hr>
+<table class="table table-bordered table-striped">
+    <thead class="bg-primary">
+    <tr>
+        <th>Title</th>
+        <th>Value</th>
+    </tr>
+    </thead>
+        <tbody class="bg-light">
+        <tr>
+            <td>
+                <p>USDGBP</p>
+            </td>
+            <td>
+            <p th:text="${usdgbp}"></p>
+            </td>
+        </tr>
+        <tr>
+            <td>
+                <p>USDEUR</p>
+            </td>
+            <td>
+                <p th:text="${usdeur}"></p>
+            </td>
+        </tr>
+        <tr>
+            <td>
+                <p>USDCAN</p>
+            </td>
+            <td>
+                <p th:text="${usdcan}"></p>
+            </td>
+        </tr>
+        <tr>
+            <td>
+                <p>USDPLN</p>
+            </td>
+            <td>
+                <p th:text="${usdpln}"></p>
+            </td>
+        </tr>
+        </tbody>
+    </div>
+</table>
+    <form class="form-inline" method="post" th:action="@{/currencies}">
+        <div class="form-group mb-2">
+            <input type="date" id="date" name="date" max="3000-12-31"
+                   min="1000-01-01" class="form-control" style="width: 300px">
+            <button type="submit" class="btn btn-primary mb-2">Accept</button>
+        </div>
+    </form>
+
+</body>
+</html>
