@@ -6,7 +6,7 @@ This is a web application with pages:
 *	New account registration page.
 *	Page showing exchange rates.
 
-##Technologies used
+## Technologies used
 *	Hibernate,
 *	Spring Data JPA,
 *	Spring MVC,
@@ -21,10 +21,10 @@ This is a web application with pages:
 *	PostgreSQL,
 *	Thymeleaf
 
-##Deployment
+## Deployment
 Add this project to your IDE as Maven project.
 
 Add Java SDK 11 in project structure.
 
-##Author
+## Author
  [Setrina Olesia](setrina527@gmail.com)
