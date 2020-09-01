@@ -11,7 +11,6 @@ This is a web application with pages:
 *	Spring Data JPA,
 *	Spring MVC,
 *	JUnit,
-*	Rest API,
 *	Spring Security,
 *	Spring Boot,
 *	JSON simple API, 
